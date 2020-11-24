@@ -15,24 +15,22 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import StartAudioContext from "startaudiocontext";
 
-/**
- TODO
- - Visualizer - must clear on stop, sometimes gets stuck on highlighted checked square
- - Tooltips for Play and Tap buttons 
- */
-
 function toggleBox(priorChecked, i, row) {
   const checked = [...priorChecked];
   checked[row][i] = !checked[row][i];
   return checked;
 }
 
-// what are correct places for these?
-// creates a global synth and context
-const synth = new Tone.PolySynth(2, Tone.Synth).toMaster();
+const synth = new Tone.PolySynth(3, Tone.Synth).toMaster();
 const context = new AudioContext();
 
-// fontawesome library setup
+const kickDrum = new Tone.Player(
+  "https://github.com/Tonejs/audio/blob/master/drum-samples/breakbeat13/kick.mp3"
+).toMaster();
+Tone.loaded().then(() => {
+  kickDrum.start();
+});
+
 library.add(faPlay);
 library.add(faStop);
 library.add(faRecycle);
@@ -41,21 +39,29 @@ library.add(faInfoCircle);
 export default class App extends React.PureComponent {
   state = {
     checked: [
-      [true, true, false, false, false, false, false],
-      [false, false, true, false, true, false, true],
-    ], // sequencer pattern array
+      [false, false, false, false, false, false, false],
+      [false, false, false, false, false, false, false],
+      [false, false, false, false, false, false, false],
+      // [false, false, false, false, false, false, false],
+      // [false, false, false, false, false, false, false],
+      // [false, false, false, false, false, false, false],
+    ],
     isPlaying: false,
-    sequenceLength: 7, // length of sequence pattern
+    sequenceLength: 7,
     tempo: 120,
     maxTempo: 300,
     isActive: [
       [0, 0, 0, 1, 0, 1, 0],
       [0, 1, 0, 1, 0, 1, 0],
-    ], // used for highlighting suring visualization
+      [0, 1, 0, 1, 0, 1, 0],
+      // [0, 1, 0, 1, 0, 1, 0],
+      // [0, 1, 0, 1, 0, 1, 0],
+      // [0, 1, 0, 1, 0, 1, 0],
+    ],
     renderedNotes: [],
-    partContainer: [], // store Part object for future removal
+    partContainer: [],
     notes: ["Eb5", "C5"],
-    timeContainer: [], // tap tempo array
+    timeContainer: [],
     defaults: {
       tempo: 120,
       sequenceLength: 8,
@@ -65,12 +71,20 @@ export default class App extends React.PureComponent {
       averageBPM: 0,
       checked: [
         [true, false, false, false, false, false, false, false],
+        [false, false, false, false, false, false, true, false],
         [false, false, true, false, true, false, true, false],
+        // [false, false, true, false, true, false, true, false],
+        // [false, false, true, false, true, false, true, false],
+        // [false, false, true, false, true, false, true, false],
       ],
       notes: ["Eb5", "C5"],
       isActive: [
         [0, 1, 0, 1, 0, 1, 0, 1],
         [0, 1, 0, 1, 0, 1, 0, 1],
+        [0, 1, 0, 1, 0, 1, 0, 1],
+        // [0, 1, 0, 1, 0, 1, 0, 1],
+        // [0, 1, 0, 1, 0, 1, 0, 1],
+        // [0, 1, 0, 1, 0, 1, 0, 1],
       ],
     },
     landscape: false,
@@ -134,14 +148,12 @@ export default class App extends React.PureComponent {
       }),
       () => {
         if (!this.state.isPlaying) {
-          //stop transport, turn off looping - prevents collision with measure sequence loop
           Tone.Transport.stop();
           Tone.Transport.loop = false;
           Tone.Transport.loopEnd = 0;
-          // isActive array zeroed out
+
           this.setState({ isActive: [[], []] }, () => console.log("stopped"));
         } else {
-          // configure looping for step sequencer
           Tone.Transport.loop = true;
           Tone.Transport.loopStart = 0;
           Tone.Transport.loopEnd =
@@ -260,7 +272,7 @@ export default class App extends React.PureComponent {
     this.setState(
       {
         notes:
-          row === "0" // refactor this conditional
+          row === "0"
             ? [note, this.state.notes[1]]
             : [this.state.notes[0], note],
       },
