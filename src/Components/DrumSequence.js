@@ -1,6 +1,6 @@
 import React from "react";
 import SequenceRow from "./SequenceRow";
-import styles from "./StepSequence.module.css";
+import styles from "./DrumSequence.module.css";
 
 const DrumSequence = (props) => (
   <div id="step-sequence" className={styles.root}>

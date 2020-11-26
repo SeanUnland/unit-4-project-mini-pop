@@ -36,6 +36,15 @@ function playSynthTwo() {
   newSynthTwo.triggerAttackRelease("D5", "4n");
 }
 
+// const polySynth = new Tone.PolySynth(Tone.Synth).toMaster();
+// const now = Tone.now();
+// polySynth.triggerAttack("D4", now);
+// polySynth.triggerAttack("F4", now + 0.5);
+// polySynth.triggerAttack("A4", now + 1);
+// polySynth.triggerAttack("C5", now + 1.5);
+// polySynth.triggerAttack("E5", now + 2);
+// polySynth.triggerRelease(["D4", "F4", "A4", "C5", "E5"], now + 4);
+
 // const sampler = new Tone.Sampler({
 //   urls: {
 //     C4: "C4.mp3",
