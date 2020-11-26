@@ -1,6 +1,6 @@
 import React from "react";
 import _ from "lodash";
-import styles from "./Title.module.css";
+import styles from "./Header.module.css";
 
 const Header = (props) => (
   <div

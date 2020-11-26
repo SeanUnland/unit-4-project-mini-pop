@@ -24,12 +24,32 @@ function toggleBox(priorChecked, i, row) {
 const synth = new Tone.PolySynth(3, Tone.Synth).toMaster();
 const context = new AudioContext();
 
-const kickDrum = new Tone.Player(
-  "https://github.com/Tonejs/audio/blob/master/drum-samples/breakbeat13/kick.mp3"
-).toMaster();
-Tone.loaded().then(() => {
-  kickDrum.start();
-});
+const newSynth = new Tone.MembraneSynth().toMaster();
+
+function playNewSynth() {
+  newSynth.triggerAttackRelease("C2", "8n");
+}
+
+const newSynthTwo = new Tone.MembraneSynth().toMaster();
+
+function playSynthTwo() {
+  newSynthTwo.triggerAttackRelease("D5", "4n");
+}
+
+// const sampler = new Tone.Sampler({
+//   urls: {
+//     C4: "C4.mp3",
+//     D4: "Ds4.mp3",
+//     F4: "Fs4.mp3",
+//     A4: "A4.mp3",
+//   },
+//   release: 1,
+//   baseUrl: "https://github.com/Tonejs/audio/tree/master/salamander/",
+// }).toDestination();
+
+// Tone.loaded().then(() => {
+//   sampler.triggerAttackRelease(["Eb4", "G4", "Bb4"], 4);
+// });
 
 library.add(faPlay);
 library.add(faStop);
@@ -370,6 +390,13 @@ export default class App extends React.PureComponent {
             isActive={this.state.isActive}
           />
         </header>
+
+        <div id="newSynth">
+          <button onClick={playNewSynth}>Synth Hit</button>
+        </div>
+        <div id="newSynthTwo">
+          <button onClick={playSynthTwo}>Synth Hit</button>
+        </div>
       </div>
     );
   }
