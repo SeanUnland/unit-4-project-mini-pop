@@ -1,15 +1,15 @@
-/* .root {
-  padding: 0.5em;
-  background: #28282c;
-  border-radius: 2px;
-  display: flex;
-  margin-bottom: 1%;
+@import url("https://fonts.googleapis.com/css2?family=Nerko+One&display=swap");
 
+.root {
+  padding: 0.5em;
+  border-radius: 2px;
+  /* display: flex; */
+  margin-bottom: 1%;
   font-size: 7vw;
-  color: red;
   align-items: flex-end;
   position: relative;
-} */
+  font-family: "Nerko One", cursive;
+}
 /* .info {
   margin-top: 3%;
   font-size: 12px;
@@ -17,14 +17,12 @@
   position: absolute;
   right: 5px;
 } */
-.landscape {
-  display: none;
-}
 
 div {
   display: inline;
   padding: 10px;
   font-size: 30px;
+  font-family: "Nerko One", cursive;
 }
 @media (min-width: 500px) {
   .root {

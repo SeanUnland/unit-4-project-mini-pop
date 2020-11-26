@@ -5,7 +5,7 @@ import Tempo from "./Tempo";
 import DisplayTempo from "./DisplayTempo";
 import TapTempo from "./TapTempo";
 import ResetButton from "./ResetButton";
-import styles from "./Buttons.module.css";
+import styles from "./Transport.module.css";
 
 const Transport = (props) => (
   <div id="buttons" className={styles.root}>

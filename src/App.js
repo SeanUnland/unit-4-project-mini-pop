@@ -389,14 +389,31 @@ export default class App extends React.PureComponent {
             notes={this.state.notes}
             isActive={this.state.isActive}
           />
+          <motion.section
+            className="sampleButtons"
+            inital={{ opacity: 0 }}
+            animate={{ opacity: 1, rotateZ: 360 }}
+          >
+            <div id="newSynth">
+              <motion.button
+                onClick={playNewSynth}
+                whileHover={{ scale: 1.3, color: "white" }}
+                whileTap={{ scale: 0.5 }}
+              >
+                Synth Hit
+              </motion.button>
+            </div>
+            <div id="newSynthTwo">
+              <motion.button
+                onClick={playSynthTwo}
+                whileHover={{ scale: 1.3, color: "white" }}
+                whileTap={{ scale: 0.5 }}
+              >
+                Synth Hit
+              </motion.button>
+            </div>
+          </motion.section>
         </header>
-
-        <div id="newSynth">
-          <button onClick={playNewSynth}>Synth Hit</button>
-        </div>
-        <div id="newSynthTwo">
-          <button onClick={playSynthTwo}>Synth Hit</button>
-        </div>
       </div>
     );
   }
