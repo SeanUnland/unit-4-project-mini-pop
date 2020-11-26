@@ -36,6 +36,18 @@ function playSynthTwo() {
   newSynthTwo.triggerAttackRelease("D5", "4n");
 }
 
+const newSynthThree = new Tone.FMSynth().toMaster();
+
+function playSynthThree() {
+  newSynthThree.triggerAttackRelease("A4", "4n");
+}
+
+const newSynthFour = new Tone.FMSynth().toMaster();
+
+function playSynthFour() {
+  newSynthFour.triggerAttackRelease("B4", "4n");
+}
+
 // const polySynth = new Tone.PolySynth(Tone.Synth).toMaster();
 // const now = Tone.now();
 // polySynth.triggerAttack("D4", now);
@@ -415,6 +427,25 @@ export default class App extends React.PureComponent {
             <div id="newSynthTwo">
               <motion.button
                 onClick={playSynthTwo}
+                whileHover={{ scale: 1.3, color: "white" }}
+                whileTap={{ scale: 0.5 }}
+              >
+                Synth Hit
+              </motion.button>
+            </div>
+
+            <div id="newSynthThree">
+              <motion.button
+                onClick={playSynthThree}
+                whileHover={{ scale: 1.3, color: "white" }}
+                whileTap={{ scale: 0.5 }}
+              >
+                Synth Hit
+              </motion.button>
+            </div>
+            <div id="newSynthFour">
+              <motion.button
+                onClick={playSynthFour}
                 whileHover={{ scale: 1.3, color: "white" }}
                 whileTap={{ scale: 0.5 }}
               >
