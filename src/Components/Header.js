@@ -10,7 +10,7 @@ const Header = (props) => (
     transition={{ duration: 2 }}
     className={_.chain([styles.root]).compact().join(" ").value()}
   >
-    Mini-Pop
+    <span id="miniPop">Mini-Pop</span>
   </motion.div>
 );
 

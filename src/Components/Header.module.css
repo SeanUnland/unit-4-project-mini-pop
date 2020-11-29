@@ -5,7 +5,7 @@
   border-radius: 2px;
   /* display: flex; */
   margin-bottom: 1%;
-  font-size: 7vw;
+  font-size: 10vw;
   align-items: flex-end;
   position: relative;
   font-family: "Nerko One", cursive;
@@ -24,6 +24,7 @@ div {
   font-size: 30px;
   font-family: "Nerko One", cursive;
 }
+
 @media (min-width: 500px) {
   .root {
     font-size: 40px;
