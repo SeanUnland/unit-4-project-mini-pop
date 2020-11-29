@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./BoxRow.module.css";
+import styles from "./SequenceRow.module.css";
 import Pitch from "./Pitch";
 import Sequence from "./Sequence";
 

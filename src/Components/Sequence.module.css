@@ -17,15 +17,17 @@
 }
 
 .box:hover {
-  background: #787885;
+  /* background: #787885; */
+  background: #ff928b;
 }
 
 .checked {
-  background: #cbff8b;
+  background: #f45b69;
 }
 
 .checked:hover {
-  background: #f2ffe2;
+  /* background: #787885; */
+  background: #39393a;
 }
 .active {
   background: #47474f;

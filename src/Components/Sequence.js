@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Box.module.css";
+import styles from "./Sequence.module.css";
 import _ from "lodash";
 
 const Sequence = (props) => (
