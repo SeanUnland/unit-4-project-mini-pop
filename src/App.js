@@ -64,21 +64,6 @@ function playPolySynth() {
   polySynth.triggerRelease(["A4", "E4", "C4"]);
 }
 
-// const sampler = new Tone.Sampler({
-//   urls: {
-//     C4: "C4.mp3",
-//     D4: "Ds4.mp3",
-//     F4: "Fs4.mp3",
-//     A4: "A4.mp3",
-//   },
-//   release: 1,
-//   baseUrl: "https://github.com/Tonejs/audio/tree/master/salamander/",
-// }).toDestination();
-
-// Tone.loaded().then(() => {
-//   sampler.triggerAttackRelease(["Eb4", "G4", "Bb4"], 4);
-// });
-
 library.add(faPlay);
 library.add(faStop);
 library.add(faRecycle);
