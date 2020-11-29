@@ -5,6 +5,7 @@ import Header from "./Components/Header";
 import Transport from "./Components/Transport";
 import DrumSequence from "./Components/DrumSequence";
 import "./App.css";
+import { Route } from "react-router-dom";
 import { motion } from "framer-motion";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
@@ -389,72 +390,74 @@ export default class App extends React.PureComponent {
 
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <Header landscape={this.state.landscape} />
-          <Transport
-            isPlaying={this.state.isPlaying}
-            onTogglePlay={this.onTogglePlay}
-            sequenceLength={this.state.sequenceLength}
-            onLengthChange={this.onLengthChange}
-            tempo={this.state.tempo}
-            onTempoChange={this.onTempoChange}
-            onReset={this.onReset}
-            handleTap={this.handleTap}
-          />
-          <DrumSequence
-            checked={this.state.checked}
-            onToggle={this.onToggleBox}
-            sequenceLength={this.state.sequenceLength}
-            onPitchSelect={this.onPitchSelect}
-            notes={this.state.notes}
-            isActive={this.state.isActive}
-          />
-          <motion.section
-            className="sampleButtons"
-            inital={{ opacity: 0 }}
-            animate={{ opacity: 1, rotateZ: 360 }}
-          >
-            <div id="newSynth">
-              <motion.button
-                onClick={playNewSynth}
-                whileHover={{ scale: 1.3, color: "white" }}
-                whileTap={{ scale: 0.5 }}
-              >
-                Synth Hit
-              </motion.button>
-            </div>
-            <div id="newSynthTwo">
-              <motion.button
-                onClick={playSynthTwo}
-                whileHover={{ scale: 1.3, color: "white" }}
-                whileTap={{ scale: 0.5 }}
-              >
-                Synth Hit
-              </motion.button>
-            </div>
+      <Route path="/">
+        <div className="App">
+          <header className="App-header">
+            <Header landscape={this.state.landscape} />
+            <Transport
+              isPlaying={this.state.isPlaying}
+              onTogglePlay={this.onTogglePlay}
+              sequenceLength={this.state.sequenceLength}
+              onLengthChange={this.onLengthChange}
+              tempo={this.state.tempo}
+              onTempoChange={this.onTempoChange}
+              onReset={this.onReset}
+              handleTap={this.handleTap}
+            />
+            <DrumSequence
+              checked={this.state.checked}
+              onToggle={this.onToggleBox}
+              sequenceLength={this.state.sequenceLength}
+              onPitchSelect={this.onPitchSelect}
+              notes={this.state.notes}
+              isActive={this.state.isActive}
+            />
+            <motion.section
+              className="sampleButtons"
+              inital={{ opacity: 0 }}
+              animate={{ opacity: 1, rotateZ: 360 }}
+            >
+              <div id="newSynth">
+                <motion.button
+                  onClick={playNewSynth}
+                  whileHover={{ scale: 1.3, color: "white" }}
+                  whileTap={{ scale: 0.5 }}
+                >
+                  Synth Hit
+                </motion.button>
+              </div>
+              <div id="newSynthTwo">
+                <motion.button
+                  onClick={playSynthTwo}
+                  whileHover={{ scale: 1.3, color: "white" }}
+                  whileTap={{ scale: 0.5 }}
+                >
+                  Synth Hit
+                </motion.button>
+              </div>
 
-            <div id="newSynthThree">
-              <motion.button
-                onClick={playSynthThree}
-                whileHover={{ scale: 1.3, color: "white" }}
-                whileTap={{ scale: 0.5 }}
-              >
-                Synth Hit
-              </motion.button>
-            </div>
-            <div id="newSynthFour">
-              <motion.button
-                onClick={playSynthFour}
-                whileHover={{ scale: 1.3, color: "white" }}
-                whileTap={{ scale: 0.5 }}
-              >
-                Synth Hit
-              </motion.button>
-            </div>
-          </motion.section>
-        </header>
-      </div>
+              <div id="newSynthThree">
+                <motion.button
+                  onClick={playSynthThree}
+                  whileHover={{ scale: 1.3, color: "white" }}
+                  whileTap={{ scale: 0.5 }}
+                >
+                  Synth Hit
+                </motion.button>
+              </div>
+              <div id="newSynthFour">
+                <motion.button
+                  onClick={playSynthFour}
+                  whileHover={{ scale: 1.3, color: "white" }}
+                  whileTap={{ scale: 0.5 }}
+                >
+                  Synth Hit
+                </motion.button>
+              </div>
+            </motion.section>
+          </header>
+        </div>
+      </Route>
     );
   }
 }
