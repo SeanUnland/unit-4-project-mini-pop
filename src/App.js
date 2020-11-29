@@ -49,14 +49,20 @@ function playSynthFour() {
   newSynthFour.triggerAttackRelease("B4", "4n");
 }
 
-// const polySynth = new Tone.PolySynth(Tone.Synth).toMaster();
-// const now = Tone.now();
-// polySynth.triggerAttack("D4", now);
-// polySynth.triggerAttack("F4", now + 0.5);
-// polySynth.triggerAttack("A4", now + 1);
-// polySynth.triggerAttack("C5", now + 1.5);
-// polySynth.triggerAttack("E5", now + 2);
-// polySynth.triggerRelease(["D4", "F4", "A4", "C5", "E5"], now + 4);
+const synthAM = new Tone.AMSynth().toMaster();
+
+function playSynthAM() {
+  synthAM.triggerAttackRelease("E5", "4n");
+}
+
+const polySynth = new Tone.PolySynth().toMaster();
+polySynth.triggerAttackRelease("A4", "8n");
+polySynth.triggerAttackRelease("E4", "8n");
+polySynth.triggerAttackRelease("C4", "8n");
+
+function playPolySynth() {
+  polySynth.triggerRelease(["A4", "E4", "C4"]);
+}
 
 // const sampler = new Tone.Sampler({
 //   urls: {
@@ -457,6 +463,31 @@ export default class App extends React.PureComponent {
                   whileTap={{ scale: 0.5 }}
                 >
                   Synth Hit
+                </motion.button>
+              </div>
+              <br />
+              <div id="newSynthFive">
+                <motion.button
+                  initial={{ y: 200 }}
+                  animate={{ y: 0 }}
+                  transition={{ duration: 1 }}
+                  onClick={playSynthAM}
+                  whileHover={{ scale: 1.3, color: "#ff928b" }}
+                  whileTap={{ scale: 0.5 }}
+                >
+                  Synth Hit
+                </motion.button>
+              </div>
+              <div id="newSynthSix">
+                <motion.button
+                  initial={{ y: 200 }}
+                  animate={{ y: 0 }}
+                  transition={{ duration: 1 }}
+                  onClick={playPolySynth}
+                  whileHover={{ scale: 1.3, color: "#ff928b" }}
+                  whileTap={{ scale: 0.5 }}
+                >
+                  Poly Synth Hit
                 </motion.button>
               </div>
             </motion.section>
