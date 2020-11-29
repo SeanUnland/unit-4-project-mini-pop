@@ -87,15 +87,15 @@ library.add(faInfoCircle);
 export default class App extends React.PureComponent {
   state = {
     checked: [
-      [false, false, false, false, false, false, false],
-      [false, false, false, false, false, false, false],
-      [false, false, false, false, false, false, false],
+      [false, false, false, false, false, false, false, false],
+      [false, false, false, false, false, false, false, false],
+      [false, false, false, false, false, false, false, false],
       // [false, false, false, false, false, false, false],
       // [false, false, false, false, false, false, false],
       // [false, false, false, false, false, false, false],
     ],
     isPlaying: false,
-    sequenceLength: 7,
+    sequenceLength: 8,
     tempo: 120,
     maxTempo: 300,
     isActive: [

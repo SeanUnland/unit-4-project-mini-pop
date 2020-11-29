@@ -5,8 +5,8 @@ import { motion } from "framer-motion";
 
 const Header = (props) => (
   <motion.div
-    initial={{ y: -100 }}
-    animate={{ y: 0 }}
+    initial={{ y: -200, color: "#627c85" }}
+    animate={{ y: 0, color: "black" }}
     transition={{ duration: 2 }}
     className={_.chain([styles.root]).compact().join(" ").value()}
   >

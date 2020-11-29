@@ -30,7 +30,11 @@ button {
 
 .sampleButtons {
   margin: 10px;
-  border: none;
 
+  display: flex;
+  justify-content: center;
+
+  /* width: 20px; */
   text-decoration: none;
+  float: left;
 }
