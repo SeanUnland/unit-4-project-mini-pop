@@ -27,3 +27,10 @@ button {
   cursor: pointer;
   letter-spacing: 2px;
 }
+
+.sampleButtons {
+  margin: 10px;
+  border: none;
+
+  text-decoration: none;
+}

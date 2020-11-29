@@ -422,7 +422,7 @@ export default class App extends React.PureComponent {
                   animate={{ y: 0 }}
                   transition={{ duration: 1 }}
                   onClick={playNewSynth}
-                  whileHover={{ scale: 1.3, color: "#ff928b" }}
+                  whileHover={{ scale: 1.3, color: "#627c85" }}
                   whileTap={{ scale: 0.5 }}
                 >
                   Synth Hit
@@ -434,7 +434,7 @@ export default class App extends React.PureComponent {
                   animate={{ y: 0 }}
                   transition={{ duration: 1 }}
                   onClick={playSynthTwo}
-                  whileHover={{ scale: 1.3, color: "#ff928b" }}
+                  whileHover={{ scale: 1.3, color: "#627c85" }}
                   whileTap={{ scale: 0.5 }}
                 >
                   Synth Hit
@@ -447,7 +447,7 @@ export default class App extends React.PureComponent {
                   animate={{ y: 0 }}
                   transition={{ duration: 1 }}
                   onClick={playSynthThree}
-                  whileHover={{ scale: 1.3, color: "#ff928b" }}
+                  whileHover={{ scale: 1.3, color: "#627c85" }}
                   whileTap={{ scale: 0.5 }}
                 >
                   Synth Hit
@@ -459,7 +459,7 @@ export default class App extends React.PureComponent {
                   animate={{ y: 0 }}
                   transition={{ duration: 1 }}
                   onClick={playSynthFour}
-                  whileHover={{ scale: 1.3, color: "#ff928b" }}
+                  whileHover={{ scale: 1.3, color: "#627c85" }}
                   whileTap={{ scale: 0.5 }}
                 >
                   Synth Hit
@@ -472,7 +472,7 @@ export default class App extends React.PureComponent {
                   animate={{ y: 0 }}
                   transition={{ duration: 1 }}
                   onClick={playSynthAM}
-                  whileHover={{ scale: 1.3, color: "#ff928b" }}
+                  whileHover={{ scale: 1.3, color: "#627c85" }}
                   whileTap={{ scale: 0.5 }}
                 >
                   Synth Hit
@@ -484,7 +484,7 @@ export default class App extends React.PureComponent {
                   animate={{ y: 0 }}
                   transition={{ duration: 1 }}
                   onClick={playPolySynth}
-                  whileHover={{ scale: 1.3, color: "#ff928b" }}
+                  whileHover={{ scale: 1.3, color: "#627c85" }}
                   whileTap={{ scale: 0.5 }}
                 >
                   Poly Synth Hit
