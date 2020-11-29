@@ -45,13 +45,13 @@ A functional and interactive drum sequencer/sampler.
 
 | Component      | Priority   | Estimated Time | Actual Time |
 | -------------- | ---------- | -------------- | ----------- |
-| App            | H          | 7              |             |
-| Drum Sequencer | H          | 8              |             |
-| Sample Library | H          | 7              |             |
-| Synthesizer    | H          | 8              |             |
-| Tempo          | H          | 4              |             |
-| Effects        | M          | 8              |             |
-|                | Total Time | 42             |             |
+| App            | H          | 7              | 9           |
+| Drum Sequencer | H          | 8              | 8           |
+| Sample Library | H          | 7              | 7           |
+| Synthesizer    | H          | 8              | 10          |
+| Tempo          | H          | 4              | 11          |
+| Effects        | M          | 8              | 9           |
+|                | Total Time | 42             | 54          |
 
 ## Additional Libraries
 
@@ -59,4 +59,18 @@ Tone.js
 
 React
 
+Framer Motion
+
+Start Audio Context
+
 ## Code Snippet
+
+This snippet of code created a synthesizer that plays a C eigth note at the second octave.
+
+```
+const newSynth = new Tone.MembraneSynth().toMaster();
+
+function playNewSynth() {
+  newSynth.triggerAttackRelease("C2", "8n");
+}
+```
