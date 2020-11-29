@@ -7,6 +7,7 @@ const Header = (props) => (
   <motion.div
     initial={{ y: -100 }}
     animate={{ y: 0 }}
+    transition={{ duration: 2 }}
     className={_.chain([styles.root]).compact().join(" ").value()}
   >
     Mini-Pop

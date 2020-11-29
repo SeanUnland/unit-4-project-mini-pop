@@ -290,7 +290,6 @@ export default class App extends React.PureComponent {
     if (timeContainer.length > 2) timeContainer.shift();
     timeContainer.push(context.currentTime.toFixed(3));
 
-    // calculate tempo
     const tempo = Math.round(
       60 /
         (timeContainer
@@ -300,7 +299,6 @@ export default class App extends React.PureComponent {
           (timeContainer.length - 1))
     );
 
-    // make sure tempo is within acceptable bounds
     if (tempo > 40 && tempo < 301) {
       this.setState({ tempo }, () => this.onTempoChange(tempo));
     } else if (tempo > 300) {
@@ -325,17 +323,14 @@ export default class App extends React.PureComponent {
   };
 
   generateMetronome = () => {
-    // erase or stop all previous parts
     const partContainer = this.state.partContainer;
     partContainer.forEach((part) => part.removeAll());
 
-    // metronome vitals
     const [note1, note2] = this.state.notes,
       seqLength = this.state.sequenceLength,
       matrix = this.state.checked,
       velocity = this.state.velocity;
 
-    // new renderedNotes array, populate
     const renderedNotes = [];
     for (let i = 0; i < seqLength; i++) {
       const time = i / 2;
@@ -364,7 +359,6 @@ export default class App extends React.PureComponent {
       }
     }
 
-    // create new Part, start Part, push Part to container
     const part = new Tone.Part((time, value) => {
       this.triggerVisualize(value.index);
       synth.triggerAttackRelease(value.note, 0.05, time, value.velocity);
@@ -382,7 +376,6 @@ export default class App extends React.PureComponent {
     const length = this.state.sequenceLength;
     const isActive = [_.fill(Array(length), 0), _.fill(Array(length), 0)];
 
-    // set particular index as active
     isActive[0][index] = 1;
     isActive[1][index] = 1;
     this.setState({ isActive });
@@ -419,8 +412,11 @@ export default class App extends React.PureComponent {
             >
               <div id="newSynth">
                 <motion.button
+                  initial={{ y: 200 }}
+                  animate={{ y: 0 }}
+                  transition={{ duration: 1 }}
                   onClick={playNewSynth}
-                  whileHover={{ scale: 1.3, color: "white" }}
+                  whileHover={{ scale: 1.3, color: "#ff928b" }}
                   whileTap={{ scale: 0.5 }}
                 >
                   Synth Hit
@@ -428,8 +424,11 @@ export default class App extends React.PureComponent {
               </div>
               <div id="newSynthTwo">
                 <motion.button
+                  initial={{ y: 200 }}
+                  animate={{ y: 0 }}
+                  transition={{ duration: 1 }}
                   onClick={playSynthTwo}
-                  whileHover={{ scale: 1.3, color: "white" }}
+                  whileHover={{ scale: 1.3, color: "#ff928b" }}
                   whileTap={{ scale: 0.5 }}
                 >
                   Synth Hit
@@ -438,8 +437,11 @@ export default class App extends React.PureComponent {
 
               <div id="newSynthThree">
                 <motion.button
+                  initial={{ y: 200 }}
+                  animate={{ y: 0 }}
+                  transition={{ duration: 1 }}
                   onClick={playSynthThree}
-                  whileHover={{ scale: 1.3, color: "white" }}
+                  whileHover={{ scale: 1.3, color: "#ff928b" }}
                   whileTap={{ scale: 0.5 }}
                 >
                   Synth Hit
@@ -447,8 +449,11 @@ export default class App extends React.PureComponent {
               </div>
               <div id="newSynthFour">
                 <motion.button
+                  initial={{ y: 200 }}
+                  animate={{ y: 0 }}
+                  transition={{ duration: 1 }}
                   onClick={playSynthFour}
-                  whileHover={{ scale: 1.3, color: "white" }}
+                  whileHover={{ scale: 1.3, color: "#ff928b" }}
                   whileTap={{ scale: 0.5 }}
                 >
                   Synth Hit
