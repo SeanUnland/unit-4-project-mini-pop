@@ -465,7 +465,7 @@ export default class App extends React.PureComponent {
                   Synth Hit
                 </motion.button>
               </div>
-              <br />
+
               <div id="newSynthFive">
                 <motion.button
                   initial={{ y: 200 }}
